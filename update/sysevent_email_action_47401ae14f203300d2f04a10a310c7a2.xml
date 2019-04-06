@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>true</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>task_sla</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <event_name>antivirus.infected</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>engine</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: black;">Hi </span><span style="font-size: 11pt; font-family: Calibri, sans-serif;">Team<span style="color: black;">,</span></span></p>
+<p><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: black;">&nbsp;</span></p>
+<p><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: black;">Please find the daily ticket status reports at the below Service NOW dashboard link (Please contact me if any issue in viewing dashboard). This email includes only the important reports which require immediate action. Please take the required action to meet the SLA and close the open tickets asap.</span></p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: black;">Dashboard Link</span></strong><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: black;">: </span><a id="LPlnk888836" href="https://apac01.safelinks.protection.outlook.com/?url=https%3A%2F%2Furldefense.proofpoint.com%2Fv2%2Furl%3Fu%3Dhttps-3A__apac01.safelinks.protection.outlook.com_-3Furl-3Dhttps-253A-252F-252Fl48.service-2Dnow.com-252F-2524pa-5Fdashboard.do-253Fsysparm-5Fdashboard-253D4bdfe77edbae9b80f838b96c4e961972-2526sysparm-5Ftab-253D5d503b7edbae9b80f838b96c4e961915-2526sysparm-5Fcancelable-253Dtrue-2526sysparm-5Feditable-253Dfalse-2526sysparm-5Factive-5Fpanel-253Dfalse-2526sysparm-5Fignore-5Fdefault-5Ffilter-253Dfalse-26data-3D01-257C01-257Caishwary.saxena-2540infosys.com-257C6cab9d45fa3a4c40172008d5ebace8dd-257C63ce7d592f3e42cda8ccbe764cff5eb6-257C1-26sdata-3DNnfEPHkQnJnAy8-252Bw5ZHcW7kG-252B2-252BeG-252FVDGjCrL-252BtDFOQ-253D-26reserved-3D0%26d%3DDwMFAg%26c%3Db9M1KQNqTisU12uGK1l4fA%26r%3DojL-_yhZqoN13T40SvhDO7irH5fNINAikzDBYy0Yps4%26m%3DE6leOG9U0XZI1T6qIYhdKrAKFeDtoT2-EriKShk2OkY%26s%3DFcjeplJJdtUaeC_exuWY-rw1KYdlnEvvtYY1Ewgi41o%26e%3D&amp;data=02%7C01%7CSowmya_Thammineni%40infosys.com%7C2f6bd3e6f50c4ff92d8508d6a7a9a7fd%7C63ce7d592f3e42cda8ccbe764cff5eb6%7C1%7C0%7C636880744469013171&amp;sdata=n6%2Fpsd74gsCKWsYpr8galezXJqG41DkGO3QSC40WwtA%3D&amp;reserved=0"><span style="font-size: 11pt; font-family: Calibri, sans-serif;">https://l48.service-now.com/$pa_dashboard.do?sysparm_dashboard=4bdfe77edbae9b80f838b96c4e961972&amp;sysparm_tab=5d503b7edbae9b80f838b96c4e961915&amp;sysparm_cancelable=true&amp;sysparm_editable=false&amp;sysparm_active_panel=false&amp;sysparm_ignore_default_filter=false</span></a></p>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: red;">Breached tickets in current month:</span></span></strong></p>
+<p>${mail_script:email.insert.table.script}</p>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 11pt; font-family: Calibri, sans-serif; color: black;">Unassigned tickets:</span></span></strong></p>
+<p>&nbsp;</p>
+<p>${mail_script:email.insert.table.script1}</p>
+<p><span style="font-size: 11pt; font-family: Calibri, sans-serif;">&nbsp;</span></p>
+<p><strong><span style="text-decoration: underline;"><span style="color: black;">Tickets going to breach within next 24 hours:</span></span><span style="color: black;">&nbsp;</span></strong></p>
+<p>${mail_script:email.insert.table.script2}</p>
+<p>&nbsp;</p>
+<p><strong><span style="text-decoration: underline;"><span style="color: black;">Aged tickets:</span></span></strong></p>
+<p>${mail_script:email.insert.table.script3}</p>
+<p>&nbsp;</p>
+<p><strong><em><span style="font-size: 11pt; font-family: Calibri, sans-serif;">Note</span><span style="font-size: 10pt; font-family: Calibri, sans-serif;">: Aged tickets count have increased as we were not monitoring few queues and have started to include every queue from 11<sup>th</sup> March 2019.</span></em></strong></p>
+<p>&nbsp;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>email.table.insert.notification</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields/>
+        <recipient_groups/>
+        <recipient_users>320007914f032300d2f04a10a310c7ab</recipient_users>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>Daily ticket reports Created: ${sys_created_on}</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-04-01 13:41:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>47401ae14f203300d2f04a10a310c7a2</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>email.table.insert.notification</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sysevent_email_action_47401ae14f203300d2f04a10a310c7a2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-02 14:44:02</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>email.insert.table.script1</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+	
+	template.print('<table style="width: 1570.25pt; margin-left: -0.15pt; border-collapse: collapse;" border="0" width="0" cellspacing="0" cellpadding="0">');
+template.print('<tbody>');
+template.print('<tr style="height: 15pt;">');
+template.print('<td style="border: 1pt solid windowtext; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Task</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Opened by</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Opened</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Priority</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">State</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">SLA definition</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Assignment group</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Assigned to</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Short description</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Configuration item</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Closed</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: #00b0f0; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">Reason</span></p>');
+template.print('</td>');
+template.print('</tr>');
+	
+var gr = new GlideRecord("task_sla");
+gr.addEncodedQuery("task.assignment_groupISEMPTY^task.assigned_toISEMPTY^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()");
+gr.query();	
+var gr1 = gr.getRowCount();
+	
+for (i=gr1; i>0; i--){
+if(gr.next()){
+template.print('<tr style="height: 15pt;">');
+template.print('<td style="border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-left: 1pt solid windowtext; border-image: initial; border-top: none; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.opened_by.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p style="text-align: right;" align="right"><span style="color: black;">');
+			   template.print(gr.task.opened_at.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.priority.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.state.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.sla.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.assignment_group.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.assigned_to.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="width: 230.85pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap" width="308">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.short_description.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="width: 121.1pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap" width="161">');
+template.print('<p><span style="color: black;">');
+			   template.print(gr.task.cmdb_ci.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap">');
+template.print('<p style="text-align: right;" align="right"><span style="color: black;">');
+			   template.print(gr.task.closed_at.getDisplayValue());
+	template.print('</span></p>');
+template.print('</td>');
+template.print('<td style="width: 394.35pt; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 15pt;" valign="bottom" nowrap="nowrap" width="526">');
+template.print('<p><span style="color: black;">Ticket breached in L48 Help Desk queue on James Stephens name and then it was assigned to Jerry AL.</span></p>');
+template.print('</td>');
+template.print('</tr>');
+}
+}
+template.print('</tbody>');
+template.print('</table>');
+	
+// template.print('<table style="border-collapse:collapse;" border="1" width="100%" cellspacing="1" cellpadding="1">' );
+// template.print("<tr>");
+//     template.print("<th bgcolor='#008ECC'>Task</th>");
+//     template.print("<th>Opened by</th>");
+//     template.print("<th>Opened</th>");
+//     template.print("<th>Priority</th>");
+// 	template.print("<th>State</th>");
+//     template.print("<th>SLA definition</th>");
+//     template.print("<th>Assignment group</th>");
+//     template.print("<th>Assigned to</th>");
+// 	template.print("<th>Short description</th>");
+//     template.print("<th>Configuration item</th>");
+//     template.print("<th>Closed</th>");
+//     //template.print("<th>Reason</th>");
+// template.print("</tr>");
+// var gr = new GlideRecord("task_sla");
+// gr.addEncodedQuery("sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()");
+// gr.query();	
+// var gr1 = gr.getRowCount();
+	
+// for (i=gr1; i>0; i--){
+// if(gr.next()){	
+//   template.print("<tr>");
+//     template.print("<td>");
+// 	template.print(gr.task.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.task.opened_by.getDisplayValue());
+// 	template.print("</td>");
+// 	 template.print("<td>");
+// 	template.print(gr.task.opened_at.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.task.priority.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.task.state.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.sla.getDisplayValue());
+// 	template.print("</td>");
+// 	 template.print("<td>");
+// 	template.print(gr.task.assignment_group.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.task.assigned_to.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.task.short_description.getDisplayValue());
+// 	template.print("</td>");
+// 	template.print("<td>");
+// 	template.print(gr.task.cmdb_ci.getDisplayValue());
+// 	template.print("</td>");
+// 	 template.print("<td>");
+// 	template.print(gr.task.closed_at.getDisplayValue());
+// 	template.print("</td>");
+	
+	
+//   template.print("</tr>");
+// 	}
+// 	}
+// 	template.print("Row count----"+gr1);
+// template.print("</table>");
+
+
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-04-02 14:37:36</sys_created_on>
+        <sys_id>4017e77d4fa03300d2f04a10a310c7f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>email.insert.table.script1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_email_4017e77d4fa03300d2f04a10a310c7f0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-02 14:50:47</sys_updated_on>
+    </sys_script_email>
+</record_update>
